@@ -22,7 +22,7 @@ function mostrarListaAmigos() {
         li.textContent = amigo;
         const botonEliminar = document.createElement('button');
         botonEliminar.textContent = 'X';
-        botonEliminar.className = 'boton-eliminar';         // Clase para estilizar
+        botonEliminar.className = 'boton-eliminar';         
         botonEliminar.onclick = () => eliminarAmigo(index);
         li.appendChild(botonEliminar);
         listaAmigos.appendChild(li);
@@ -51,11 +51,11 @@ function sortearAmigo() {
         amigosParaSorteo.splice(indiceAleatorio, 1);
     }
     
-    /// Verificación para que nadie se regale a sí mismo
+   
 
     let sorteoValido = false;
     while (!sorteoValido) {
-        sorteados.sort(() => Math.random() - 0.5);      // Mezcla aleatoria
+        sorteados.sort(() => Math.random() - 0.5);     
         sorteoValido = true;
         for (let i = 0; i < amigos.length; i++) {
             if (amigos[i] === sorteados[i]) {
@@ -72,8 +72,23 @@ function sortearAmigo() {
     });
 }
 
+function sortearAmigo() {
+    if (amigos.length < 2) {
+        alert('Debes agregar al menos 2 amigos para realizar el sorteo.');
+        return;
+    }
+
+    inputAmigo.disabled = true;
+    document.querySelector('.button-add').disabled = true;
+    
+}
+
 function reiniciar() {
     amigos = [];
     listaAmigos.innerHTML = '';
     resultado.innerHTML = '';
+
+    // Habilitar los controles para permitir agregar nuevos nombres
+    inputAmigo.disabled = false;
+    document.querySelector('.button-add').disabled = false;
 }
