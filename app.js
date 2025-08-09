@@ -34,16 +34,14 @@ function eliminarAmigo(index) {
     mostrarListaAmigos();
 }
 
-// ✨ Esta es la función `sortearAmigo()` corregida y completa ✨
 function sortearAmigo() {
     if (amigos.length < 2) {
         alert('Debes agregar al menos 2 amigos para realizar el sorteo.');
         return;
     }
 
-    // Deshabilita los controles
     inputAmigo.disabled = true;
-    document.querySelector('.button-add').disabled = true;
+    document.querySelector('.button-add').disabled = true;
 
     const amigosParaSorteo = [...amigos];
     const sorteados = [];
