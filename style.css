@@ -170,3 +170,16 @@ ul {
     font-weight: bold;
     margin-left: 10px;
 }
+
+
+.button-reset {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 25px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.button-reset:hover {
+    background-color: #a1a1a1;
+}
